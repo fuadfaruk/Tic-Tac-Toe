@@ -1,36 +1,44 @@
-.board-shell {
-  max-width: 420px;
-  margin: 0 auto;
-  padding: 1rem;
-}
 
-.board-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-
-.status {
-  font-weight: 700;
-}
-
-.reset {
-  background: #007bff;
-  border: none;
-  color: white;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
-
-.board-grid {
+main {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
+  grid-template-columns: repeat(3, 200px);
+  grid-gap: 6px;
+  background: transparent;
 }
 
-.board-footer {
-  margin-top: 1rem;
+app-square {
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+.controls .start-btn {
+  border: 2px solid #ff5c88;
+  background: transparent !important;
+  color: #ff7a9a;
+  padding: 8px 14px;
+  border-radius: 6px;
   font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  box-shadow: none;
+}
+
+.status-text {
+  margin: 8px 0 16px 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: Inter, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 0.1px;
+}
+
+/* Responsive: shrink board on small screens */
+@media (max-width: 600px) {
+  main {
+    grid-template-columns: repeat(3, 28vw);
+  }
+  app-square { width: 28vw; height: 28vw; }
 }

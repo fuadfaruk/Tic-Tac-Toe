@@ -1,19 +1,18 @@
-<section class="board-shell">
-  <div class="board-header">
-    <div class="status">Current Player: {{ player }}</div>
-    <button type="button" class="reset" (click)="newGame()">Start new Game</button>
-  </div>
+<div class="app-container">
+  <header class="app-header">
+    <h1>Current Player: {{ player }}</h1>
+    <div class="controls">
+      <button class="start-btn" (click)="newGame()">START NEW GAME</button>
+    </div>
+    <div *ngIf="winner" class="status-text">Player {{ winner }} won the game!</div>
+  </header>
 
-  <div class="board-grid">
-    <ng-container *ngFor="let square of squares; index as i">
-      <app-square
-        [value]="square"
-        (selected)="makeMove(i)"
-      ></app-square>
-    </ng-container>
-  </div>
+  <main>
+    <app-square
+      *ngFor="let val of squares; let i = index"
+      [value]="val"
+      (click)="makeMove(i)">
 
-  <div class="board-footer" *ngIf="winner">
-    Winner: {{ winner }}
-  </div>
-</section>
+    </app-square>
+  </main>
+</div>

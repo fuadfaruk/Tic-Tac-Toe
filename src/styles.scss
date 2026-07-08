@@ -1,1 +1,17 @@
+/* Nebular Cosmic Theme */
+@import '@nebular/theme/styles/prebuilt/cosmic.css';
+
 /* You can add global styles to this file, and also import other style files */
+
+/* Ensure a dark cosmic background if Nebular body class doesn't apply in some setups */
+body.nb-theme-cosmic,
+body {
+	background: #1a1b2e;
+	color: #ffffff;
+	margin: 0;
+	font-family: Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+app-root {
+	display: block;
+}
