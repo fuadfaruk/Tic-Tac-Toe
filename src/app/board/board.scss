@@ -1,0 +1,36 @@
+.board-shell {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.board-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.status {
+  font-weight: 700;
+}
+
+.reset {
+  background: #007bff;
+  border: none;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+
+.board-footer {
+  margin-top: 1rem;
+  font-weight: 700;
+}

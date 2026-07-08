@@ -1,0 +1,19 @@
+<section class="board-shell">
+  <div class="board-header">
+    <div class="status">Current Player: {{ player }}</div>
+    <button type="button" class="reset" (click)="newGame()">Start new Game</button>
+  </div>
+
+  <div class="board-grid">
+    <ng-container *ngFor="let square of squares; index as i">
+      <app-square
+        [value]="square"
+        (selected)="makeMove(i)"
+      ></app-square>
+    </ng-container>
+  </div>
+
+  <div class="board-footer" *ngIf="winner">
+    Winner: {{ winner }}
+  </div>
+</section>
